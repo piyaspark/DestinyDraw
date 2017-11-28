@@ -15,8 +15,8 @@ public class StartMenu extends javax.swing.JFrame {
      * Creates new form StartMenu
      */
     public StartMenu() {
-        this.setPreferredSize(new Dimension(620, 450));
-        this.setMinimumSize(new Dimension(620, 450));
+        this.setPreferredSize(new Dimension(720, 450));
+        this.setMinimumSize(new Dimension(720, 450));
         this.setLocationRelativeTo(null);
         initComponents();
     }
@@ -44,10 +44,10 @@ public class StartMenu extends javax.swing.JFrame {
         Title.setText(" Destiny Draw");
         Title.setToolTipText("");
         Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 400, 64));
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 400, 64));
 
         ExitIcon.setFont(new java.awt.Font("Herculanum", 0, 36)); // NOI18N
-        ExitIcon.setForeground(new java.awt.Color(255, 102, 102));
+        ExitIcon.setForeground(new java.awt.Color(255, 255, 255));
         ExitIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/exitbutton.png"))); // NOI18N
         ExitIcon.setText("  Exit");
         ExitIcon.setToolTipText("");
@@ -59,11 +59,11 @@ public class StartMenu extends javax.swing.JFrame {
                 ExitIconActionPerformed(evt);
             }
         });
-        getContentPane().add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 230, 110));
+        getContentPane().add(ExitIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 230, 80));
         ExitIcon.getAccessibleContext().setAccessibleName("Start");
 
         StartIcon.setFont(new java.awt.Font("Herculanum", 1, 36)); // NOI18N
-        StartIcon.setForeground(new java.awt.Color(138, 225, 228));
+        StartIcon.setForeground(new java.awt.Color(255, 255, 255));
         StartIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/StartIcon.png"))); // NOI18N
         StartIcon.setText("  Start");
         StartIcon.setToolTipText("");
@@ -76,10 +76,10 @@ public class StartMenu extends javax.swing.JFrame {
                 StartIconActionPerformed(evt);
             }
         });
-        getContentPane().add(StartIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 230, 60));
+        getContentPane().add(StartIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 230, 60));
 
-        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BGStartMenu.jpg"))); // NOI18N
-        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+        BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/menuBackground.jpg"))); // NOI18N
+        getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

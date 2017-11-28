@@ -18,6 +18,7 @@ import java.io.*;
 public class PlayInterface extends javax.swing.JFrame {
 
     public static int round = -1;
+    private static int count = 0;
     private String[] playerCard;
     private String[] dealerCard;
     private int playerScore = 0;
@@ -29,11 +30,11 @@ public class PlayInterface extends javax.swing.JFrame {
      * Creates new form PlayInterface
      */
     public PlayInterface() {
-        this.setPreferredSize(new Dimension(1089, 611));
-        this.setMinimumSize(new Dimension(1089, 611));
+        this.setPreferredSize(new Dimension(1089, 595));
+        this.setMinimumSize(new Dimension(1089, 595));
         this.setLocationRelativeTo(null);
         initComponents();
-       
+
     }
 
     /**
@@ -57,6 +58,7 @@ public class PlayInterface extends javax.swing.JFrame {
         dealer5 = new javax.swing.JLabel();
         MoneyShow = new javax.swing.JLabel();
         MoneyBet = new javax.swing.JLabel();
+        Deckofcard = new javax.swing.JLabel();
         coin5 = new javax.swing.JButton();
         coin25 = new javax.swing.JButton();
         coin100 = new javax.swing.JButton();
@@ -65,65 +67,58 @@ public class PlayInterface extends javax.swing.JFrame {
         Play = new javax.swing.JButton();
         Hit = new javax.swing.JButton();
         Stand = new javax.swing.JButton();
+        Help = new javax.swing.JButton();
         Reset = new javax.swing.JButton();
-        Sound = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         player1.setBackground(new java.awt.Color(255, 255, 255));
-        player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 110, 160));
+        getContentPane().add(player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 110, 160));
 
         player2.setBackground(new java.awt.Color(255, 255, 255));
-        player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 110, 160));
+        getContentPane().add(player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 110, 160));
 
         player3.setBackground(new java.awt.Color(255, 255, 255));
-        player3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 110, 160));
+        getContentPane().add(player3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 110, 160));
 
         player4.setBackground(new java.awt.Color(255, 255, 255));
-        player4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 110, 160));
+        getContentPane().add(player4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 110, 160));
 
         player5.setBackground(new java.awt.Color(255, 255, 255));
-        player5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(player5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 110, 160));
+        getContentPane().add(player5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 110, 160));
 
         dealer1.setBackground(new java.awt.Color(255, 255, 255));
-        dealer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(dealer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, 110, 160));
+        getContentPane().add(dealer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 110, 160));
 
         dealer2.setBackground(new java.awt.Color(255, 255, 255));
-        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(dealer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 110, 160));
+        getContentPane().add(dealer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 110, 160));
 
         dealer3.setBackground(new java.awt.Color(255, 255, 255));
-        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(dealer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, 110, 160));
+        getContentPane().add(dealer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 110, 160));
 
         dealer4.setBackground(new java.awt.Color(255, 255, 255));
-        dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(dealer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 40, 110, 160));
+        getContentPane().add(dealer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 110, 160));
 
         dealer5.setBackground(new java.awt.Color(255, 255, 255));
-        dealer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg"))); // NOI18N
-        getContentPane().add(dealer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 110, 160));
+        getContentPane().add(dealer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 110, 160));
 
-        MoneyShow.setFont(new java.awt.Font("DSN Single", 1, 36)); // NOI18N
+        MoneyShow.setFont(new java.awt.Font("DIN Alternate", 1, 24)); // NOI18N
         MoneyShow.setForeground(new java.awt.Color(255, 255, 255));
         MoneyShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Money.png"))); // NOI18N
-        MoneyShow.setText("Money : 1000");
+        MoneyShow.setText("Money: 1000");
         MoneyShow.setToolTipText("");
-        getContentPane().add(MoneyShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 340, 70));
+        getContentPane().add(MoneyShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 310, 70));
 
-        MoneyBet.setFont(new java.awt.Font("DSN Single", 1, 36)); // NOI18N
+        MoneyBet.setFont(new java.awt.Font("DIN Alternate", 1, 24)); // NOI18N
         MoneyBet.setForeground(new java.awt.Color(240, 240, 240));
         MoneyBet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/BetMoney.png"))); // NOI18N
-        MoneyBet.setText("Bet : 0");
-        getContentPane().add(MoneyBet, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 490, 250, 80));
+        MoneyBet.setText("Bet: 0");
+        getContentPane().add(MoneyBet, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 490, 250, 80));
+
+        Deckofcard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Deckofcard.png"))); // NOI18N
+        getContentPane().add(Deckofcard, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 110, 180));
 
         coin5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/5coin.png"))); // NOI18N
         coin5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -133,7 +128,7 @@ public class PlayInterface extends javax.swing.JFrame {
                 coin5ActionPerformed(evt);
             }
         });
-        getContentPane().add(coin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 60, 60));
+        getContentPane().add(coin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 500, 60, 60));
 
         coin25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/25coin.png"))); // NOI18N
         coin25.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -173,7 +168,7 @@ public class PlayInterface extends javax.swing.JFrame {
                 coin1000ActionPerformed(evt);
             }
         });
-        getContentPane().add(coin1000, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, 60, 60));
+        getContentPane().add(coin1000, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, 60, 60));
 
         Play.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/playbutton.png"))); // NOI18N
         Play.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -185,7 +180,7 @@ public class PlayInterface extends javax.swing.JFrame {
         });
         getContentPane().add(Play, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 60, 150, 70));
 
-        Hit.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Hit.setFont(new java.awt.Font("DIN Alternate", 1, 24)); // NOI18N
         Hit.setForeground(new java.awt.Color(255, 255, 255));
         Hit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/hitbutton.png"))); // NOI18N
         Hit.setText("HIT");
@@ -198,7 +193,7 @@ public class PlayInterface extends javax.swing.JFrame {
         });
         getContentPane().add(Hit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 150, 150, 50));
 
-        Stand.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Stand.setFont(new java.awt.Font("DIN Alternate", 1, 24)); // NOI18N
         Stand.setForeground(new java.awt.Color(255, 255, 255));
         Stand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/standbutton.png"))); // NOI18N
         Stand.setText("STAND");
@@ -210,7 +205,19 @@ public class PlayInterface extends javax.swing.JFrame {
                 StandActionPerformed(evt);
             }
         });
-        getContentPane().add(Stand, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 210, 190, 80));
+        getContentPane().add(Stand, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 210, 190, 80));
+
+        Help.setFont(new java.awt.Font("DIN Alternate", 0, 24)); // NOI18N
+        Help.setForeground(new java.awt.Color(255, 255, 255));
+        Help.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/helpbutton.png"))); // NOI18N
+        Help.setText("HELP");
+        Help.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Help.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HelpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Help, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 300, 120, -1));
 
         Reset.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         Reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reset.png"))); // NOI18N
@@ -223,15 +230,6 @@ public class PlayInterface extends javax.swing.JFrame {
         });
         getContentPane().add(Reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 60, 60, 70));
 
-        Sound.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Sound.setText("Sound");
-        Sound.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SoundActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Sound, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 320, 120, 50));
-
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/tableBackground.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 580));
 
@@ -239,199 +237,217 @@ public class PlayInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HitActionPerformed
-       if(moneyBet!=0){
-        if (round == -1) {
-            JOptionPane.showMessageDialog(null, "        Please click PLAY button to start", "Error", 0);
-        } else if (round == 10) {
-            JOptionPane.showMessageDialog(null, "        Cannot interacted\nPlease reset by RESET button", "Error", 0);
-        } else {
-            switch (round) {
+        if (moneyBet != 0) {
+            if (round == -1) {
+                JOptionPane.showMessageDialog(null, "       Please click PLAY button to start", "Error", 0);
+            } else if (round == 10) {
+                JOptionPane.showMessageDialog(null, "       Cannot interacted\nPlease reset by RESET button", "Error", 0);
+            } else {
+                switch (round) {
 
-                case 0:
-                    player3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[2] + ".png")));
-                    round++;
-                    playerScore += Hand.cardValuePlayer[2];
-                    checkBlackjackPlayer(playerScore);
+                    case 0:
+                        player3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[2] + ".png")));
+                        round++;
+                        playerScore += Hand.cardValuePlayer[2];
+                        checkBlackjackPlayer(playerScore);
 
-                    break;
-                case 1:
-                    player4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[3] + ".png")));
-                    round++;
-                    playerScore += Hand.cardValuePlayer[3];
-                    checkBlackjackPlayer(playerScore);
+                        break;
+                    case 1:
+                        player4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[3] + ".png")));
+                        round++;
+                        playerScore += Hand.cardValuePlayer[3];
+                        checkBlackjackPlayer(playerScore);
 
-                    break;
-                case 2:
-                    player5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[4] + ".png")));
-                    round++;
-                    playerScore += Hand.cardValuePlayer[4];
-                    checkBlackjackPlayer(playerScore);
+                        break;
+                    case 2:
+                        player5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[4] + ".png")));
+                        round++;
+                        playerScore += Hand.cardValuePlayer[4];
+                        checkBlackjackPlayer(playerScore);
 
-                    break;
-                default:
-                    break;
+                        break;
+                    default:
+                        break;
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "        Please bet before start to play", "Error", 0);
         }
-        }else{
-        JOptionPane.showMessageDialog(null, "        Please bet before start to play", "Error", 0);}
     }//GEN-LAST:event_HitActionPerformed
 
     private void StandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StandActionPerformed
         Reset.setVisible(true);
-        if(moneyBet!=0){
-        if (round == -1) {
-            JOptionPane.showMessageDialog(null, "        Please click PLAY button to start", "Error", 0);
-            round=0;
-        } else if (round == 10) {
-            JOptionPane.showMessageDialog(null, "        Cannot interacted\nPlease reset by RESET button", "Error", 0);
-        } else {
-            switch (round) {
-                case 0:
-                    dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
-                    dealerScore += Hand.cardValueDealer[1];
-                    checkWinORLose(playerScore, dealerScore);
-                    break;
-                case 1:
-                    dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
-                    dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
-                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2];
-                   checkWinORLose(playerScore, dealerScore);
-                    break;
-                case 2:
-                    dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
-                    dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
-                    dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[3] + ".png")));
-                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2]+Hand.cardValueDealer[3];
-                   checkWinORLose(playerScore, dealerScore);
-                    break;
-                case 3:
-                    dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
-                    dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
-                    dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[3] + ".png")));
-                    dealer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[4] + ".png")));
-                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2]+Hand.cardValueDealer[3]+Hand.cardValueDealer[4];
-                   checkWinORLose(playerScore, dealerScore);
-                    break;
-                default:
+        if (moneyBet != 0) {
+            if (round == -1) {
+                JOptionPane.showMessageDialog(null, "        Please click PLAY button to start", "Error", 0);
+                round = -1;
+            } else if (round == 10) {
+                JOptionPane.showMessageDialog(null, "        Cannot interacted\nPlease reset by RESET button", "Error", 0);
+            } else {
+                for (int i = 1; i < dealerCard.length; i++) {
+                    dealerScore += Hand.cardValueDealer[i];
+                    if (dealerScore < 17) {
+                        count++;
+                    } else {
+                        break;
+                    }
+                }
+                switch (count) {
+                    case 0:
+                        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
+//                    dealerScore += Hand.cardValueDealer[1];
+                        checkWinORLose(playerScore, dealerScore);
+                        round = 10;
 
-                    break;
+                        break;
+                    case 1:
+                        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
+                        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
+//                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2];
+                        checkWinORLose(playerScore, dealerScore);
+                        round = 10;
 
+                        break;
+                    case 2:
+                        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
+                        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
+                        dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[3] + ".png")));
+//                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2]+Hand.cardValueDealer[3];
+                        checkWinORLose(playerScore, dealerScore);
+                        round = 10;
+
+                        break;
+                    case 3:
+                        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[1] + ".png")));
+                        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[2] + ".png")));
+                        dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[3] + ".png")));
+                        dealer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[4] + ".png")));
+//                    dealerScore += Hand.cardValueDealer[1]+Hand.cardValueDealer[2]+Hand.cardValueDealer[3]+Hand.cardValueDealer[4];
+                        checkWinORLose(playerScore, dealerScore);
+                        round = 10;
+                        break;
+                    default:
+                        round = 10;
+                        break;
+
+                }
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "         Please bet before start to play", "Error", 0);
         }
-        round = 10;
-        }else{
-        JOptionPane.showMessageDialog(null, "        Please bet before start to play", "Error", 0);}
     }//GEN-LAST:event_StandActionPerformed
     private void PlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayActionPerformed
-      
-        if(moneyBet!=0){   
-        if (round != 10) {
-            round = 0;
 
-            playerCard = Hand.cardFilePlayer;
-            dealerCard = Hand.cardFileDealer;
+        if (moneyBet != 0) {
+            if (round != 10) {
+                round = 0;
 
-            player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[0] + ".png")));
-            player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[1] + ".png")));
+                playerCard = Hand.cardFilePlayer;
+                dealerCard = Hand.cardFileDealer;
 
-            dealer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[0] + ".png")));
-            Reset.setVisible(false);
-            playerScore = Hand.cardValuePlayer[0] + Hand.cardValuePlayer[1];
-            checkBlackjackPlayer(playerScore);
-            if (playerScore == 21) {
-                JOptionPane.showMessageDialog(null, "        You got Blackjack!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
-              Reset.setVisible(true);
-                money += moneyBet*3;
-               showMoneyAndBet();
-                round = 10;
+                player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[0] + ".png")));
+                player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + playerCard[1] + ".png")));
+
+                dealer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DeckOfCard/" + dealerCard[0] + ".png")));
+                dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
+                Reset.setVisible(false);
+                playerScore = Hand.cardValuePlayer[0] + Hand.cardValuePlayer[1];
+                checkBlackjackPlayer(playerScore);
+                if (playerScore == 21) {
+                    JOptionPane.showMessageDialog(null, "          You got Blackjack!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+                    Reset.setVisible(true);
+                    money += moneyBet * 3;
+                    showMoneyAndBet();
+                    round = 10;
+                }
+
+                dealerScore = Hand.cardValueDealer[0];
+//            checkBlackjackDealer(dealerScore);
+//            if (dealerScore == 21) {
+//                JOptionPane.showMessageDialog(null, "          Dealer got Blackjack!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+//              Reset.setVisible(true);
+//                money -= moneyBet;
+//                showMoneyAndBet();
+//                round = 10;
+//            }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "          Cannot interacted\nPlease reset by PLAY button", "Error", 0);
             }
-            
-            dealerScore = Hand.cardValueDealer[0];
-            checkBlackjackDealer(dealerScore);
-            if (dealerScore == 21) {
-                JOptionPane.showMessageDialog(null, "        Dealer got Blackjack!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
-              Reset.setVisible(true);
-                money -= moneyBet*2;
-                showMoneyAndBet();
-                round = 10;
-//                 money -= moneyBet*3;
-            }
-            
-
         } else {
-            JOptionPane.showMessageDialog(null, "        Cannot interacted\nPlease reset by RESET button", "Error", 0);
+            JOptionPane.showMessageDialog(null, "          You forgot to bet or reset", "Error", 0);
         }
-        }else{
-    JOptionPane.showMessageDialog(null, "        You forgot to bet or reset", "Error", 0);}
 
 
     }//GEN-LAST:event_PlayActionPerformed
 
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
-        if(moneyBet!=0){
-            money+=moneyBet;
-            moneyBet=0;
+        if (moneyBet != 0) {
+            money += moneyBet;
+            moneyBet = 0;
             showMoneyAndBet();
 //            round=-1;
 //        JOptionPane.showMessageDialog(null, "        Please bet again and start by START buuton", "Error", 0);Deck.cards.clear();
-        }else{
-            
-        Deck.newDeck();
-        Hand.drawCardPlayer();
-        Hand.drawCardDealer();
+        } else {
 
-        player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
+            Deck.newDeck();
+            Hand.drawCardPlayer();
+            Hand.drawCardDealer();
 
-        dealer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
+            player1.setIcon(null);
+            player2.setIcon(null);
+            player3.setIcon(null);
+            player4.setIcon(null);
+            player5.setIcon(null);
 
-        playerScore = 0;
-        dealerScore = 0;
-        moneyBet=0;
-        
-        showMoneyAndBet();
-        
-        round = -1;
+            dealer1.setIcon(null);
+            dealer2.setIcon(null);
+            dealer3.setIcon(null);
+            dealer4.setIcon(null);
+            dealer5.setIcon(null);
+
+            playerScore = 0;
+            dealerScore = 0;
+            moneyBet = 0;
+
+            showMoneyAndBet();
+
+            round = -1;
+            count = 0;
         }
-   //redo to fix bug     
-if(moneyBet!=0){
-            money+=moneyBet;
-            moneyBet=0;
+        //redo to fix bug     
+        if (moneyBet != 0) {
+            money += moneyBet;
+            moneyBet = 0;
             showMoneyAndBet();
 //            round=-1;
 //        JOptionPane.showMessageDialog(null, "        Please bet again and start by START buuton", "Error", 0);Deck.cards.clear();
-        }else{
-            
-        Deck.newDeck();
-        Hand.drawCardPlayer();
-        Hand.drawCardDealer();
+        } else {
 
-        player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        player5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
+            Deck.newDeck();
+            Hand.drawCardPlayer();
+            Hand.drawCardDealer();
 
-        dealer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
-        dealer5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/backOfCard.jpg")));
+            player1.setIcon(null);
+            player2.setIcon(null);
+            player3.setIcon(null);
+            player4.setIcon(null);
+            player5.setIcon(null);
 
-        playerScore = 0;
-        dealerScore = 0;
-        moneyBet=0;
-        
-        showMoneyAndBet();
-        
-        round = -1;
+            dealer1.setIcon(null);
+            dealer2.setIcon(null);
+            dealer3.setIcon(null);
+            dealer4.setIcon(null);
+            dealer5.setIcon(null);
+
+            playerScore = 0;
+            dealerScore = 0;
+            moneyBet = 0;
+
+            showMoneyAndBet();
+
+            round = -1;
+            count = 0;
         }// TODO add your handling code here:
     }//GEN-LAST:event_ResetActionPerformed
 
@@ -444,7 +460,7 @@ if(moneyBet!=0){
         } else {
             money += 25;
             showMoneyAndBet();
-            JOptionPane.showMessageDialog(null, "          You do not have enough money!", "Error", 0);
+            JOptionPane.showMessageDialog(null, "           You do not have enough money!", "Error", 0);
         }// TODO add your handling code here:
     }//GEN-LAST:event_coin25ActionPerformed
 
@@ -457,7 +473,7 @@ if(moneyBet!=0){
         } else {
             money += 1000;
             showMoneyAndBet();
-            JOptionPane.showMessageDialog(null, "          You do not have enough money!", "Error", 0);
+            JOptionPane.showMessageDialog(null, "           You do not have enough money!", "Error", 0);
         }// TODO add your handling code here:
     }//GEN-LAST:event_coin1000ActionPerformed
 
@@ -470,7 +486,7 @@ if(moneyBet!=0){
         } else {
             money += 5;
             showMoneyAndBet();
-            JOptionPane.showMessageDialog(null, "          You do not have enough money!", "Error", 0);
+            JOptionPane.showMessageDialog(null, "           You do not have enough money!", "Error", 0);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_coin5ActionPerformed
@@ -484,7 +500,7 @@ if(moneyBet!=0){
         } else {
             money += 100;
             showMoneyAndBet();
-            JOptionPane.showMessageDialog(null, "          You do not have enough money!", "Error", 0);
+            JOptionPane.showMessageDialog(null, "           You do not have enough money!", "Error", 0);
         }// TODO add your handling code here:
     }//GEN-LAST:event_coin100ActionPerformed
 
@@ -497,35 +513,29 @@ if(moneyBet!=0){
         } else {
             money += 500;
             showMoneyAndBet();
-            JOptionPane.showMessageDialog(null, "          You do not have enough money!", "Error", 0);
+            JOptionPane.showMessageDialog(null, "           You do not have enough money!", "Error", 0);
         }// TODO add your handling code here:
     }//GEN-LAST:event_coin500ActionPerformed
 
-    private void SoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoundActionPerformed
-    InputStream in;
-    try{
-    in =new FileInputStream(new File("/Image/how.wav"));
-     AudioStream audios = new AudioStream(in);
-     AudioPlayer.player.start(audios);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null,e);
-            }// TODO add your handling code here:
-    }//GEN-LAST:event_SoundActionPerformed
+    private void HelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpActionPerformed
+        new InformationPage().setVisible(true);
+        this.setVisible(false);
+// TODO add your handling code here:
+    }//GEN-LAST:event_HelpActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-    public void showMoneyAndBet(){
-        MoneyShow.setText("Money : "+String.valueOf(money));
-           MoneyBet.setText("Bet : "+String.valueOf(moneyBet));
+    public void showMoneyAndBet() {
+        MoneyShow.setText("Money : " + String.valueOf(money));
+        MoneyBet.setText("Bet : " + String.valueOf(moneyBet));
     }
-    
-     public void checkBlackjackPlayer(int score) {
+
+    public void checkBlackjackPlayer(int score) {
         if (score > 21) {
-            JOptionPane.showMessageDialog(null, "        You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+            JOptionPane.showMessageDialog(null, "           You busted\n              You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
             round = 10;
-            moneyBet=0;
+            moneyBet = 0;
             Reset.setVisible(true);
             showMoneyAndBet();
         } else {
@@ -535,10 +545,10 @@ if(moneyBet!=0){
 
     public void checkBlackjackDealer(int score) {
         if (score > 21) {
-            JOptionPane.showMessageDialog(null, "        You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+            JOptionPane.showMessageDialog(null, "           Dealer busted\n              You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
             round = 10;
-            money += moneyBet*3;
-            moneyBet=0;
+            money += moneyBet * 3;
+            moneyBet = 0;
             showMoneyAndBet();
         } else {
 
@@ -548,49 +558,49 @@ if(moneyBet!=0){
     public void checkWinORLose(int playerScore, int dealerScore) {
         if (playerScore <= 21 && dealerScore <= 21) {
             if (playerScore > dealerScore) {
-                JOptionPane.showMessageDialog(null, "        You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+                JOptionPane.showMessageDialog(null, "           You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
                 System.out.print("1");
-                 money += moneyBet*2;
-                 moneyBet=0;
-                 showMoneyAndBet();
+                money += moneyBet * 2;
+                moneyBet = 0;
+                showMoneyAndBet();
             } else if (playerScore == dealerScore) {
-                JOptionPane.showMessageDialog(null, "        You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+                JOptionPane.showMessageDialog(null, "           Draw game!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
                 System.out.print("2");
                 Reset.setVisible(true);
-                moneyBet=0;
+                money += moneyBet;
+                moneyBet = 0;
                 showMoneyAndBet();
             } else {
-                JOptionPane.showMessageDialog(null, "        You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+                JOptionPane.showMessageDialog(null, "           You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
                 System.out.print("3");
                 Reset.setVisible(true);
-                moneyBet=0;
-                 showMoneyAndBet();
+                moneyBet = 0;
+                showMoneyAndBet();
             }
         } else if (playerScore <= 21 && dealerScore > 21) {
-            JOptionPane.showMessageDialog(null, "        You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+            JOptionPane.showMessageDialog(null, "           Dealer busted\n              You win!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
             System.out.print("4");
-            money += moneyBet*2;
-            moneyBet=0;
+            money += moneyBet * 2;
+            moneyBet = 0;
             showMoneyAndBet();
 
         } else if (playerScore > 21 && dealerScore <= 21) {
-            JOptionPane.showMessageDialog(null, "        You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+            JOptionPane.showMessageDialog(null, "           You busted\n           You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
             System.out.print("5");
             Reset.setVisible(true);
-            moneyBet=0;
+            moneyBet = 0;
             showMoneyAndBet();
 
         } else {
-            JOptionPane.showMessageDialog(null, "        You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
+            JOptionPane.showMessageDialog(null, "           You lose!\nClick RESET and then click PLAY to play again", "Match Ended", 0);
             System.out.print("6");
             Reset.setVisible(true);
-            moneyBet=0;
+            moneyBet = 0;
             showMoneyAndBet();
 
         }
     }
-    
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -626,12 +636,13 @@ if(moneyBet!=0){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
+    private javax.swing.JLabel Deckofcard;
+    private javax.swing.JButton Help;
     private javax.swing.JButton Hit;
     private javax.swing.JLabel MoneyBet;
     private javax.swing.JLabel MoneyShow;
     private javax.swing.JButton Play;
     private javax.swing.JButton Reset;
-    private javax.swing.JButton Sound;
     private javax.swing.JButton Stand;
     private javax.swing.JButton coin100;
     private javax.swing.JButton coin1000;
