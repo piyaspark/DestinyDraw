@@ -34,7 +34,7 @@ public class PlayInterface extends javax.swing.JFrame {
         this.setMinimumSize(new Dimension(1089, 595));
         this.setLocationRelativeTo(null);
         initComponents();
-
+        MoneyShow.setText("Money : " + String.valueOf(money));
     }
 
     /**
