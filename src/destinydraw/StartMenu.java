@@ -6,7 +6,8 @@
 package destinydraw;
 /**
  *
- * @author Administrator
+ * @author Piyaphol Wiengperm
+ * @author Thanakrit Daowrueang
  */
 import java.awt.Dimension;
 public class StartMenu extends javax.swing.JFrame {
@@ -15,8 +16,8 @@ public class StartMenu extends javax.swing.JFrame {
      * Creates new form StartMenu
      */
     public StartMenu() {
-        this.setPreferredSize(new Dimension(720, 450));
-        this.setMinimumSize(new Dimension(720, 450));
+        this.setPreferredSize(new Dimension(720, 460));
+        this.setMinimumSize(new Dimension(720, 460));
         this.setLocationRelativeTo(null);
         initComponents();
     }
@@ -33,9 +34,13 @@ public class StartMenu extends javax.swing.JFrame {
         Title = new javax.swing.JLabel();
         ExitIcon = new javax.swing.JButton();
         StartIcon = new javax.swing.JButton();
+        Version = new javax.swing.JLabel();
         BackGround = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(720, 460));
+        setPreferredSize(new java.awt.Dimension(720, 460));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Title.setFont(new java.awt.Font("Herculanum", 0, 48)); // NOI18N
@@ -44,7 +49,7 @@ public class StartMenu extends javax.swing.JFrame {
         Title.setText(" Destiny Draw");
         Title.setToolTipText("");
         Title.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 400, 64));
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 400, 64));
 
         ExitIcon.setFont(new java.awt.Font("Herculanum", 0, 36)); // NOI18N
         ExitIcon.setForeground(new java.awt.Color(255, 255, 255));
@@ -53,7 +58,7 @@ public class StartMenu extends javax.swing.JFrame {
         ExitIcon.setToolTipText("");
         ExitIcon.setBorderPainted(false);
         ExitIcon.setContentAreaFilled(false);
-        ExitIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ExitIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExitIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExitIconActionPerformed(evt);
@@ -70,13 +75,19 @@ public class StartMenu extends javax.swing.JFrame {
         StartIcon.setBorder(null);
         StartIcon.setBorderPainted(false);
         StartIcon.setContentAreaFilled(false);
-        StartIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        StartIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         StartIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StartIconActionPerformed(evt);
             }
         });
         getContentPane().add(StartIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 230, 60));
+
+        Version.setFont(new java.awt.Font("Herculanum", 0, 24)); // NOI18N
+        Version.setForeground(new java.awt.Color(255, 51, 51));
+        Version.setText("Version 1.0.1");
+        Version.setToolTipText("");
+        getContentPane().add(Version, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 160, 40));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/menuBackground.jpg"))); // NOI18N
         getContentPane().add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 450));
@@ -133,5 +144,6 @@ public class StartMenu extends javax.swing.JFrame {
     private javax.swing.JButton ExitIcon;
     private javax.swing.JButton StartIcon;
     private javax.swing.JLabel Title;
+    private javax.swing.JLabel Version;
     // End of variables declaration//GEN-END:variables
 }

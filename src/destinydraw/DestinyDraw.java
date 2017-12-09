@@ -7,7 +7,8 @@ package destinydraw;
 
 /**
  *
- * @author Administrator
+ * @author Piyaphol Wiengperm
+ * @author Thanakrit Daowrueang
  */
 public class DestinyDraw {
 

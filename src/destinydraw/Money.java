@@ -7,7 +7,8 @@ package destinydraw;
 
 /**
  *
- * @author spark
+ * @author Piyaphol Wiengperm
+ * @author Thanakrit Daowrueang
  */
 public class Money {
 
